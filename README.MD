@@ -69,11 +69,6 @@ https://steel.lasseedsvik.se
 - Trumbowyg https://alex-d.github.io/Trumbowyg/
 - Font Awesome 6.2 https://fontawesome.com
 
-# Known issues 
-
-- There are some issues in sm and xs-mode. 
-- "Choose Files" is not a file input. So it needs to be changed and designed if used.
-
 # Suggestions
 
 - If planning to use move in files. It would look really good if there were a vertical dark blue divider with arrows right and left that are vertically centered.
