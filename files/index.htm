@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Steel - Bootstrap 5 Admin Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="../css/admin.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container bg-white p-0 mt-4 rounded-1 shadow-lg" id="admin-container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg px-3 py-0 pt-1 shadow">
+            <div class="container">
+                <a class="navbar-brand ms-2 me-4 my-sm-2 text-white text-center" href="../start.htm">
+                    <span class="h1 m-0 p-0">S</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAdmin"
+                    aria-controls="navbarAdmin" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarAdmin">
+
+                    <ul class="navbar-nav me-auto my-0">
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white p-3 px-xl-5 px-lg-4" href="../start.htm">
+                                <i class="fa-solid fa-house"></i>
+                                <br>
+                                Start
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white p-3 px-xl-5 px-lg-4" href="../files">
+                                <i class="fa-regular fa-folder-open"></i>
+                                <br>
+                                Files
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white p-3 px-xl-5 px-lg-4" href="../blog">
+                                <i class="fa-solid fa-blog"></i>
+                                <br>
+                                Blog
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white px-xl-5 py-3 px-lg-4" href="../content">
+                                <i class="fa-regular fa-file-lines"></i>
+                                <br>
+                                Pages</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white py-3 px-xl-5 px-lg-4" href="../users">
+                                <i class="fa-solid fa-users"></i>
+                                <br>
+                                Users
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white py-3 px-xl-5 px-lg-4" href="../settings">
+                                <i class="fa-solid fa-gears"></i>
+                                <br>
+                                Settings
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white py-3 px-xl-5 px-lg-4" href="../information">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <br>
+                                Information
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center text-center">
+                        <a class="nav-link text-white p-3 fa-spin-hover" href="../" id="logout">
+                            <i class="fa-solid fa-power-off text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+
+        <div id="content-container" class="p-5">
+            <!-- Content -->
+
+            <h1 class="mb-0">
+                <i class="fa-regular fa-folder-open"></i> Files
+            </h1>
+            <small>Here you can manage your files and adjust your images.</small>
+
+            <div class="mt-4">
+                <div class="container files-container pblue-border rounded-1">
+                    <div class="row deblue-bg px-3 pt-3 pb-2 text-white steel-gradient" id="files-toolbar">
+                        <div class="col-sm-7">
+                            <button class="btn btn-secondary p-4 py-2" data-bs-toggle="collapse"
+                                data-bs-target="#upload-form" aria-expanded="false" aria-controls="upload-form"
+                                title="Ladda upp filer">
+                                <i class="fa-solid fa-upload"></i>
+                            </button>
+                            <button class="btn btn-secondary mx-2 p-4 py-2" title="Create folder">
+                                <i class="fa-solid fa-folder-plus"></i>
+                            </button>
+                            <button class="btn btn-secondary p-4 py-2 me-2" title="Update">
+                                <i class="fa-solid fa-rotate"></i>
+                            </button>
+                            <button class="btn btn-secondary p-4 py-2" title="Move files" disabled>
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            </button>
+
+                            <button class="btn btn-secondary p-4 py-2 float-end" title="Search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <input type="text" class="form-control w-25 me-1 rounded-1 float-end" id="search">
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="range" class="ms-2 float-end" value="3" min="1" max="3" step="1" id="Filesize">
+                            <span class="h5 align-baseline float-end">
+                                <i class="fa-regular fa-file"></i>
+                                <i class="fa-regular fa-file fa-lg"></i>
+                                <i class="fa-regular fa-file fa-xl"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <nav aria-label="breadcrumb pt-2 pb-1 px-3">
+                            <ol class="breadcrumb m-0 py-2 px-4">
+                                <li class="breadcrumb-item text-white">
+                                    <i class="fa-regular fa-folder-open me-1"></i>
+                                    <a href="#">Upload</a>
+                                </li>
+                                <li class="breadcrumb-item text-white"><a href="#">My folder</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div id="upload-form" class="row deblue-bg collapse p-0">
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="p-4 px-5 text-white">
+                                <div class="p-2 pb-4 text-center">
+                                    <div id="upload-dropzone" class="beblue-bg p-5 px-4">
+                                        <h4>Upload files</h4>
+                                        <p>You can drag and drop files into this box. Or select files manually using the
+                                            button below</p>
+                                        <br>
+                                        <button class="btn btn-secondary py-3 px-5" title="Skapa ny mapp">
+                                            <i class="fa-regular fa-file me-2"></i> Select files
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row d-block p-4 px-1 justify-content-center">
+                        <div class="container">
+                            <!-- File listing Large (*-lg) -->
+                            <div class="row folder row-cols-1 row-cols-md-6 g-4 file-listing file-listing-lg">
+                                <!-- Folder 1 -->
+                                <div class="col folder align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#edit-folder" title="Rename" class="folder-edit me-2 text-white"
+                                                data-folder-id="1">
+                                                <i class="fa-solid fa-file-pen"></i></a>
+                                            <a href="#delete-folder" title="Delete" class="folder-delete text-white"
+                                                data-bs-toggle="modal" data-bs-target="#delete-modal"
+                                                data-folder-id="1">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="#folder1" class="folder-link text-black" data-folder-id="1"
+                                            title="Modified: 2022-11-04 11:32 AM">
+                                            <i class="fa-solid fa-folder fa-8x folder-icon"></i>
+                                            <div class="card-body">
+                                                <span class="card-title">Folder 1</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Folder 1 -->
+                                <!-- Folder 2 -->
+                                <div class="col folder align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#rename-folder" title="Rename" class="folder-edit me-2 text-white"
+                                                data-folder-id="1">
+                                                <i class="fa-solid fa-file-pen"></i>
+                                            </a>
+                                            <a href="#delete-folder" title="Delete" class="folder-delete text-white"
+                                                data-bs-toggle="modal" data-bs-target="#delete-modal"
+                                                data-folder-id="1">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="#folder1" class="folder-link text-black"
+                                            title="Modified: 2022-11-04 11:32 AM" data-folder-id="1">
+                                            <i class="fa-solid fa-folder fa-8x folder-icon"></i>
+                                            <div class="card-body">
+                                                <span class="card-title">Folder 2</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Folder 2 -->
+                                <!-- Image 1 -->
+                                <div class="col file align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#image-modal" title="View/Adjust image" class="me-2 text-white"
+                                                data-bs-toggle="modal" data-bs-target="#image-modal" data-file-id="1">
+                                                <i class="fa-solid fa-file-image"></i>
+                                            </a>
+                                            <a href="#rename-file" title="Rename" class="mx-2 text-white">
+                                                <i class="fa-solid fa-file-pen"></i>
+                                            </a>
+                                            <a href="../images/daisies.jpg" title="Open in new window" class="me-2 text-white"
+                                                target="_blank">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                            </a>
+                                            <a href="#download-file" title="Download" class="me-2 text-white">
+                                                <i class="fa-solid fa-download"></i>
+                                            </a>
+                                            <a href="#delete" title="Delete" class="text-white" data-bs-toggle="modal"
+                                                data-bs-target="#delete-modal" data-file-id="1">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="#image" data-bs-toggle="modal" data-bs-target="#image-modal"
+                                            class="file-link text-black"
+                                            title="Item type: JPG File&#10;Size: 146 KB&#10;Dimensions: 800x600&#10;Modified: 2022-11-05 02:54 PM"
+                                            data-file-id="1">
+                                            <img src="../images/daisies.jpg" class="image" alt="">
+                                            <div class="card-body">
+                                                <span class="card-title">daisies.jpg</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Image 1 -->
+                                <!-- Image 2 -->
+                                <div class="col file align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#image-modal" title="View/Adjust image" class="me-2 text-white"
+                                                data-bs-toggle="modal" data-bs-target="#image-modal" data-file-id="1">
+                                                <i class="fa-solid fa-file-image"></i>
+                                            </a>
+                                            <a href="#rename-file" title="Rename" class="mx-2 text-white">
+                                                <i class="fa-solid fa-file-pen"></i>
+                                            </a>
+                                            <a href="../images/golf.jpg" title="Open in new window" class="me-2 text-white"
+                                                target="_blank">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                            </a>
+                                            <a href="#download-file" title="Download" class="me-2 text-white">
+                                                <i class="fa-solid fa-download"></i>
+                                            </a>
+                                            <a href="#delete" title="Delete" class="text-white" data-bs-toggle="modal"
+                                                data-bs-target="#delete-modal" data-file-id="1">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="#image" data-bs-toggle="modal" data-bs-target="#image-modal"
+                                            class="file-link text-black"
+                                            title="Item type: JPG File&#10;Size: 139 KB&#10;Dimensions: 480x640&#10;Modified: 2022-11-05 02:54 PM">
+                                            <img src="../images/golf.jpg" class="image" alt="">
+                                            <div class="card-body">
+                                                <span class="card-title">golf.jpg</span>
+
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Image 2 -->
+                                <!-- Image 3 -->
+                                <div class="col file align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#image-modal" title="View/Adjust image" class="me-2 text-white"
+                                                data-bs-toggle="modal" data-bs-target="#image-modal" data-file-id="1">
+                                                <i class="fa-solid fa-file-image"></i>
+                                            </a>
+                                            <a href="#rename-file" title="Rename" class="mx-2 text-white">
+                                                <i class="fa-solid fa-file-pen"></i>
+                                            </a>
+                                            <a href="../images/minions.jpg" title="Open in new window" class="me-2 text-white"
+                                                target="_blank">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                            </a>
+                                            <a href="#download-file" title="Download" class="me-2 text-white">
+                                                <i class="fa-solid fa-download"></i>
+                                            </a>
+                                            <a href="#delete" title="Delete" class="text-white" data-bs-toggle="modal"
+                                                data-bs-target="#delete-modal" data-file-id="1">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="#image" data-bs-toggle="modal" data-bs-target="#image-modal"
+                                            class="file-link text-black"
+                                            title="Item type: JPG File&#10;Size: 21 KB&#10;Dimensions: 400x225&#10;Modified: 2022-11-05 02:54 PM">
+                                            <img src="../images/minions.jpg" class="image" alt="">
+                                            <div class="card-body">
+                                                <span class="card-title">minions.jpg</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Image 3-->
+                                <!-- File 1 -->
+                                <div class="col file align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#rename-file" title="Rename" class="me-2 text-white"><i
+                                                    class="fa-solid fa-file-pen"></i></a>
+                                            <a href="../mock-files/report.pdf" title="Open in new window" class="me-2 text-white"
+                                                target="_blank"><i
+                                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                            <a href="#download-file" title="Download" class="me-2 text-white"><i
+                                                    class="fa-solid fa-download"></i></a>
+                                            <a href="#delete" title="Delete" class="text-white" data-bs-toggle="modal"
+                                                data-bs-target="#delete-modal">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="../mock-files/report.pdf" target="_blank" class="file-link text-black"
+                                            title="Item type: PDF File&#10;Size: 8 KB&#10;Modified: 2022-11-05 02:54 PM">
+                                            <i class="fa-regular fa-file-pdf fa-8x"></i>
+                                            <div class="card-body">
+                                                <span class="card-title">report.pdf</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End File 1 -->
+                                <!-- Image 4 -->
+                                <div class="col file align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#image-modal" title="View/Adjust image" class="me-2 text-white"
+                                                data-bs-toggle="modal" data-bs-target="#image-modal" data-file-id="1">
+                                                <i class="fa-solid fa-file-image"></i>
+                                            </a>
+                                            <a href="#rename-file" title="Rename" class="mx-2 text-white">
+                                                <i class="fa-solid fa-file-pen"></i>
+                                            </a>
+                                            <a href="../images/rogue.jpg" title="Open in new window" class="me-2 text-white"
+                                                target="_blank">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                            </a>
+                                            <a href="#download-file" title="Download" class="me-2 text-white">
+                                                <i class="fa-solid fa-download"></i>
+                                            </a>
+                                            <a href="#delete" title="Delete" class="text-white" data-bs-toggle="modal"
+                                                data-bs-target="#delete-modal" data-file-id="1">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="#image" data-bs-toggle="modal" data-bs-target="#image-modal"
+                                            class="file-link text-black"
+                                            title="Item type: JPG File&#10;Size: 92 KB&#10;Dimensions: 870x652&#10;Modified: 2022-11-05 02:54 PM">
+                                            <img src="../images/rogue.jpg" class="image" alt="">
+                                            <div class="card-body">
+                                                <span class="card-title">rogue.jpg</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Image 4-->
+                                <!-- File 2 -->
+                                <div class="col file align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">                                            
+                                            <a href="#rename-file" title="Rename" class="mx-2 text-white"><i
+                                                    class="fa-solid fa-file-pen"></i></a>
+                                            <a href="../mock-files/something.txt" title="Open in new window" class="me-2 text-white"
+                                                target="_blank"><i
+                                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                            <a href="#download-file" title="Download" class="me-2 text-white"><i
+                                                    class="fa-solid fa-download"></i></a>
+                                            <a href="#delete" title="Delete" class="text-white" data-bs-toggle="modal"
+                                                data-bs-target="#delete-modal">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="../mock-files/something.txt" target="_blank" class="file-link text-black"
+                                            title="Item type: ABC File&#10;Size: 1 KB&#10;Modified: 2022-11-05 02:54 PM">
+                                            <i class="fa-regular fa-file-lines fa-8x"></i>
+                                            <div class="card-body">
+                                                <span class="card-title">something.txt</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End File 2 -->
+                                <!-- Image 5 -->
+                                <div class="col file align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#image-modal" title="View/Adjust image" class="me-2 text-white"
+                                                data-bs-toggle="modal" data-bs-target="#image-modal" data-file-id="1">
+                                                <i class="fa-solid fa-file-image"></i>
+                                            </a>
+                                            <a href="#rename-file" title="Rename" class="mx-2 text-white">
+                                                <i class="fa-solid fa-file-pen"></i>
+                                            </a>
+                                            <a href="../images/volvo-pv-B18-engine.jpg" title="Open in new window" class="me-2 text-white"
+                                                target="_blank">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                            </a>
+                                            <a href="#download-file" title="Download" class="me-2 text-white">
+                                                <i class="fa-solid fa-download"></i>
+                                            </a>
+                                            <a href="#delete" title="Delete" class="text-white" data-bs-toggle="modal"
+                                                data-bs-target="#delete-modal" data-file-id="1">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="#image" data-bs-toggle="modal" data-bs-target="#image-modal"
+                                            class="file-link text-black"
+                                            title="Item type: JPG File&#10;Size: 20 KB&#10;Dimensions: 300x300&#10;Modified: 2022-11-05 02:54 PM">
+                                            <img src="../images/volvo-pv-B18-engine.jpg" class="image" alt="">
+                                            <div class="card-body">
+                                                <span class="card-title">volvo-engine.jpg</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Image 5-->
+                                <!-- Image 6 -->
+                                <div class="col file align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#image-modal" title="View/Adjust image" class="me-2 text-white"
+                                                data-bs-toggle="modal" data-bs-target="#image-modal" data-file-id="1">
+                                                <i class="fa-solid fa-file-image"></i>
+                                            </a>
+                                            <a href="#rename-file" title="Rename" class="mx-2 text-white">
+                                                <i class="fa-solid fa-file-pen"></i>
+                                            </a>
+                                            <a href="../images/volvo-pv-rear.jpg" title="Open in new window" class="me-2 text-white"
+                                                target="_blank">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                            </a>
+                                            <a href="#download-file" title="Download" class="me-2 text-white">
+                                                <i class="fa-solid fa-download"></i>
+                                            </a>
+                                            <a href="#delete" title="Delete" class="text-white" data-bs-toggle="modal"
+                                                data-bs-target="#delete-modal" data-file-id="1">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="#image" data-bs-toggle="modal" data-bs-target="#image-modal"
+                                            class="file-link text-black"
+                                            title="Item type: JPG File&#10;Size: 39 KB&#10;Dimensions: 169x300&#10;Modified: 2022-11-05 02:54 PM">
+                                            <img src="../images/volvo-pv-rear.jpg" class="image" alt="">
+                                            <div class="card-body">
+                                                <span class="card-title">volvo-pv-rear.jpg</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Image 6-->
+                                <!-- Image 7 -->
+                                <div class="col file align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#image-modal" title="View/Adjust image" class="me-2 text-white"
+                                                data-bs-toggle="modal" data-bs-target="#image-modal" data-file-id="1">
+                                                <i class="fa-solid fa-file-image"></i>
+                                            </a>
+                                            <a href="#rename-file" title="Rename" class="mx-2 text-white">
+                                                <i class="fa-solid fa-file-pen"></i>
+                                            </a>
+                                            <a href="../images/volvo-pv-side.jpg" title="Open in new window" class="me-2 text-white"
+                                                target="_blank">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                            </a>
+                                            <a href="#download-file" title="Download" class="me-2 text-white">
+                                                <i class="fa-solid fa-download"></i>
+                                            </a>
+                                            <a href="#delete" title="Delete" class="text-white" data-bs-toggle="modal"
+                                                data-bs-target="#delete-modal" data-file-id="1">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="#image" data-bs-toggle="modal" data-bs-target="#image-modal"
+                                            class="file-link text-black"
+                                            title="Item type: JPG File&#10;Size: 40 KB&#10;Modified: 2022-11-05 02:54 PM">
+                                            <img src="../images/volvo-pv-side.jpg" class="image" alt="">
+                                            <div class="card-body">
+                                                <span class="card-title">volvo-pv-side.jpg</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End Image 7-->
+                                <!-- File 3 -->
+                                <div class="col file align-self-end">
+                                    <div class="card text-center">
+                                        <div class="card-header text-end px-3 rounded-2">
+                                            <a href="#rename-file" title="Rename" class="me-2 text-white"><i
+                                                    class="fa-solid fa-file-pen"></i></a>
+                                            <a href="../mock-files/word.docx" title="Open in new window" class="me-2 text-white"
+                                                target="_blank"><i
+                                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                            <a href="#download-file" title="Download" class="me-2 text-white"><i
+                                                    class="fa-solid fa-download"></i></a>
+                                            <a href="#delete" title="Delete" class="text-white" data-bs-toggle="modal"
+                                                data-bs-target="#delete-modal">
+                                                <i class="fa-regular fa-trash-can"></i>
+                                            </a>
+                                        </div>
+                                        <a href="../mock-files/word.docx"  target="_blank" 
+                                            class="file-link text-black"
+                                            title="Item type: DOCX File&#10;Size: 5 KB&#10;Modified: 2022-11-05 02:54 PM">
+                                            <i class="fa-regular fa-file-word fa-8x"></i>
+                                            <div class="card-body">
+                                                <span class="card-title">word.docx</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- End File 3 -->
+                            </div>
+                            <!-- End File listing Large (*-lg) -->
+
+
+                        </div>
+                    </div>
+                    <div class="row py-2 px-4 pblue-bg">
+                        <span class="text-center text-white">
+                            9 items. Total: 500kb
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Confirm Delete Modal -->
+                <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delete-modalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header steel-gradient text-white px-4">
+                                <h1 class="modal-title fs-5" id="delete-modalLabel">
+                                    <i class="fa-solid fa-trash-can me-2"></i>
+                                    Delete - Confirm deletion
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body px-4">
+                                Are you sure you want to delete this file/folder? This action cannot be undone.
+                            </div>
+                            <div class="modal-footer px-4">
+                                <button type="button" class="btn btn-primary me-3 px-4" data-bs-dismiss="modal">
+                                    <i class="fa-solid fa-xmark me-1"></i>
+                                    Cancel
+                                </button>
+                                <button type="button" class="btn btn-primary px-4">
+                                    <i class="fa-regular fa-circle-check me-1"></i> Confirm
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Confirm Delete Modal -->
+
+                <!-- View/Adjust Image Modal -->
+                <div class="modal fade mt-5" id="image-modal" tabindex="-1" aria-labelledby="image-modalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl mt-5">
+                        <div class="modal-content">
+                            <div class="modal-header steel-gradient text-white px-4">
+                                <h1 class="modal-title fs-5" id="image-modalLabel">View/Adjust image - daisies.jpg
+                                    (800x600) - 146KB</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="steel-gradient text-white px-0 py-3">
+                                <div class="offset-lg-1">
+                                    <button class="btn btn-secondary p-4 py-2 me-2" data-bs-toggle="collapse"
+                                        data-bs-target="#resize-form" aria-expanded="false" aria-controls="resize-form"
+                                        title="Resize">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </button>
+                                    <button class="btn btn-secondary p-4 py-2 me-2" title="Crop">
+                                        <i class="fa-solid fa-crop"></i>
+                                    </button>
+                                    <button class="btn btn-secondary p-4 py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#contrast-form" aria-expanded="false"
+                                        aria-controls="contrast-form" title="Contrast">
+                                        <i class="fa-solid fa-circle-half-stroke"></i>
+                                    </button>
+                                    <button class="btn btn-secondary ms-2 p-4 py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#brightness-form" aria-expanded="false"
+                                        aria-controls="brightness-form" title="Brightness">
+                                        <i class="fa-regular fa-sun"></i>
+                                    </button>
+                                    <button class="btn btn-secondary ms-2 p-4 py-2" title="Filter" disabled>
+                                        <i class="fa-solid fa-filter"></i>
+                                    </button>
+                                    <button class="btn btn-secondary ms-2 p-4 py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#file-info" aria-expanded="false" aria-controls="file-info"
+                                        title="File information">
+                                        <i class="fa-solid fa-info"></i>
+                                    </button>
+                                </div>
+                                <!-- Resize options -->
+                                <div class="modal-body shadow-lg mt-0 p-0 col-12">
+                                    <div id="resize-form" class="pblue-bg collapse p-0">
+                                        <div class="col-8 offset-2">
+                                            <form method="post" action="#">
+                                                <div class="p-4 px-5 text-white">
+                                                    <div class="p-2 pb-2">
+                                                        <h4>Resize image</h4>
+                                                        <table>
+                                                            <tr>
+                                                                <td class="w-auto text-white">Width:</td>
+                                                                <td><input type="number"
+                                                                        class="form-control rounded-1 w-90px"
+                                                                        id="image-width" value="800"></td>
+                                                                <td class="w-auto text-white ps-3">Height:</td>
+                                                                <td><input type="number"
+                                                                        class="form-control rounded-1 w-90px"
+                                                                        id="image-height" value="600"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td colspan="3" class="text-white py-2">
+                                                                    <div class="form-check form-switch">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            id="image-maintain-aspect-ratio" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="image-maintain-aspect-ratio">Mantain
+                                                                            aspect ratio</label>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4">
+                                                                    <button class="btn btn-secondary mt-2 p-4 py-2">
+                                                                        <i class="fa-solid fa-check me-2"></i>
+                                                                        Apply changes
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Resize options -->
+
+                                <!-- Contrast options -->
+                                <div class="modal-body shadow-lg mt-0 p-0 col-12">
+                                    <div id="contrast-form" class="pblue-bg collapse p-0">
+                                        <div class="col-10 offset-2">
+                                            <form method="post" action="#">
+                                                <div class="p-4 px-5 text-white">
+                                                    <div class="p-2 pb-2">
+                                                        <h4>Contrast</h4>
+                                                        <table class="w-75">
+                                                            <tr>
+                                                                <td class="w-20 text-white">Contrast:</td>
+                                                                <td class="px-3">
+                                                                    <input type="range" class="w-100" id="contrast"
+                                                                        min="-100" max="100" step="1" value="0">
+                                                                </td>
+                                                                <td class="w-15">
+                                                                    <label for="contrast">0</label>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <button class="btn btn-secondary mt-2 p-4 py-2">
+                                                                        <i class="fa-solid fa-check me-2"></i>
+                                                                        Apply changes
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Contrast options -->
+
+                                <!-- Brightness options -->
+                                <div class="modal-body shadow-lg mt-0 p-0 col-12">
+                                    <div id="brightness-form" class="pblue-bg collapse p-0">
+                                        <div class="col-10 offset-2">
+                                            <form method="post" action="#">
+                                                <div class="p-4 px-5 text-white">
+                                                    <div class="p-2 pb-2">
+                                                        <h4>Brightness</h4>
+                                                        <table class="w-75">
+                                                            <tr>
+                                                                <td class="w-20 text-white">Brightness:</td>
+                                                                <td class="px-3">
+                                                                    <input type="range" class="w-100" id="brightness"
+                                                                        min="-100" max="100" step="1" value="0">
+                                                                </td>
+                                                                <td class="w-15">
+                                                                    <label for="brightness">0</label>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <button class="btn btn-secondary mt-2 p-4 py-2">
+                                                                        <i class="fa-solid fa-check me-2"></i>
+                                                                        Apply changes
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Brightness options -->
+
+                                <!-- File information -->
+                                <div class="modal-body shadow-lg mt-0 p-0 col-12">
+                                    <div id="file-info" class="pblue-bg collapse p-0">
+                                        <div class="col-10 offset-2">
+                                            <form method="post" action="#">
+                                                <div class="p-4 px-5 text-white">
+                                                    <div class="p-2 pb-2">
+                                                        <h4>File information</h4>
+                                                        <table class="w-75">
+                                                            <tr>
+                                                                <td class="w-20 text-white">Filename:</td>
+                                                                <td>daisies.jpg</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Rating:</td>
+                                                                <td>
+                                                                    <i class="fa-solid fa-star ratings-star"></i>
+                                                                    <i class="fa-solid fa-star ratings-star"></i>
+                                                                    <i class="fa-solid fa-star ratings-star"></i>
+                                                                    <i class="fa-solid fa-star ratings-star"></i>
+                                                                    <i class="fa-regular fa-star ratings-star"></i>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Type:</td>
+                                                                <td>JPG File</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Dimensions:</td>
+                                                                <td>800 x 600</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Size:</td>
+                                                                <td>146 KB</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Tags:</td>
+                                                                <td>Daisies, Summer, 2022</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Authors:</td>
+                                                                <td>Lasse Edsvik</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Camera maker:</td>
+                                                                <td>Apple</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Camera model:</td>
+                                                                <td>iPhone 12</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">F-stop:</td>
+                                                                <td>f/1.6</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Exposure time:</td>
+                                                                <td>1/537 sec.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">ISO speed:</td>
+                                                                <td>ISO-32</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Exposure bias:</td>
+                                                                <td>0 step</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Focal length:</td>
+                                                                <td>4 mm</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Metering mode:</td>
+                                                                <td>Pattern</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Modified:</td>
+                                                                <td>2022-05-11 02:54 PM</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-20 text-white">Created:</td>
+                                                                <td>2022-05-11 01:32 PM</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End File information -->
+
+                                <div class="text-center mt-3 overflow-auto">
+                                    <img src="../images/daisies.jpg" alt=""
+                                        title="Item type: JPG File&#10;Size: 146 KB&#10;Dimensions: 800x600&#10;Modified: 2022-11-05 02:54 PM">
+                                </div>
+                            </div>
+
+                            <div class="modal-footer pblue-bg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End View/Adjust Image Modal -->
+            </div>
+            <!-- End Content-->
+        </div>
+
+        <footer class="p-4 text-muted border-top text-center">
+            Steel Bootstrap 5 Admin Template. Created 2022 by Lasse Edsvik.
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/lasseedsvik" target="_blank" class="text-muted">github.com/lasseedsvik</a>
+        </footer>
+    </div>
+
+    <script>
+        $(function () {
+            // Remove .show for collapsable divs to avoid them getting stacked. 
+            $("button").click(function () {
+                $(".collapse").removeClass("show");
+            });
+
+            // Update label for range sliders
+            $("input[type=range]").change(function () {
+                var id = $(this).attr("id");
+                var value = $(this).val();
+
+                $("label[for=" + id + "]").text(value);
+            });
+
+
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

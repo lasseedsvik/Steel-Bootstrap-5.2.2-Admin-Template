@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Steel - Bootstrap 5 Admin Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="../css/admin.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container bg-white p-0 mt-4 rounded-1 shadow-lg" id="admin-container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg px-3 py-0 pt-1 shadow">
+            <div class="container">
+                <a class="navbar-brand ms-2 me-4 my-sm-2 text-white text-center" href="../start.htm">
+                    <span class="h1 m-0 p-0">S</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAdmin"
+                    aria-controls="navbarAdmin" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarAdmin">
+
+                    <ul class="navbar-nav me-auto my-0">
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white p-3 px-xl-5 px-lg-4" href="../start.htm">
+                                <i class="fa-solid fa-house"></i>
+                                <br>
+                                Start
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white p-3 px-xl-5 px-lg-4" href="../files">
+                                <i class="fa-regular fa-folder-open"></i>
+                                <br>
+                                Files
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white p-3 px-xl-5 px-lg-4" href="../blog">
+                                <i class="fa-solid fa-blog"></i>
+                                <br>
+                                Blog
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white px-xl-5 py-3 px-lg-4" href="../content">
+                                <i class="fa-regular fa-file-lines"></i>
+                                <br>
+                                Pages</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white py-3 px-xl-5 px-lg-4" href="../users">
+                                <i class="fa-solid fa-users"></i>
+                                <br>
+                                Users
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white py-3 px-xl-5 px-lg-4" href="../settings">
+                                <i class="fa-solid fa-gears"></i>
+                                <br>
+                                Settings
+                            </a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link text-white py-3 px-xl-5 px-lg-4" href="../information">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <br>
+                                Information
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center text-center">
+                        <a class="nav-link text-white p-3 fa-spin-hover" href="../" id="logout">
+                            <i class="fa-solid fa-power-off text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+
+        <div id="content-container" class="p-5">
+            <!-- Content -->
+
+            <h1 class="mb-0">
+                <i class="fa-solid fa-users me-2"></i>
+                User - Lasse Edsvik @lasseedsvik
+            </h1>
+            <small>Here you can manage the user's information and password.</small>
+
+            <!-- User edit -->
+            <form method="get" action="index.htm">
+                <ul class="nav nav-tabs list-group-flush mt-4" id="edit-menu">
+                    <li class="nav-item">
+                        <a href="#general" class="nav-link active" data-bs-toggle="tab">
+                            <i class="fa-solid fa-circle-info mx-2"></i>
+                            General information
+                        </a>
+                    </li>
+					<li class="nav-item">
+						<a href="#social-media" class="nav-link" data-bs-toggle="tab">
+							<i class="fa-regular fa-comment-dots mx-2"></i>
+							Social media
+						</a>
+					</li>
+                    <li class="nav-item">
+                        <a href="#password" class="nav-link" data-bs-toggle="tab">
+                            <i class="fa-solid fa-key mx-2"></i>
+                            Set password
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#activity" class="nav-link" data-bs-toggle="tab">
+                            <i class="fa-solid fa-chalkboard-user mx-2"></i> User activity
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#save" class="nav-link" data-bs-toggle="tab">
+                            <i class="fa-regular fa-floppy-disk mx-2"></i> Save
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane show active border-1" id="general">
+                        <div class="p-4">
+                            <h4>General information</h4>
+                            <table class="table table-borderless table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td class="w-15 align-middle px-4">
+                                            <label for="Username"><i class="fa-solid fa-at me-2"></i> Username:</label>
+                                        </td>
+                                        <td class="w-auto"><input class="form-control rounded-1" type="text"
+                                                value="lasseedsvik" id="Username" aria-label="default input">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-15 align-middle px-4">
+                                            <label for="Firstname"><i class="fa-solid fa-signature me-2"></i> First
+                                                name:</label>
+                                        </td>
+                                        <td class="w-auto">
+                                            <input class="form-control rounded-1" type="text" value="Lasse"
+                                                id="Firstname" aria-label="default input">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-15 align-middle px-4"><i class="fa-solid fa-signature me-2"></i>
+                                            Last name:
+                                        </td>
+                                        <td class="w-auto"><input class="form-control rounded-1" type="text"
+                                                value="Edsvik" aria-label="default input"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-15 align-middle px-4"><i class="fa-solid fa-at me-2"></i> E-mail:
+                                        </td>
+                                        <td class="w-auto">
+                                            <input class="form-control rounded-1" type="email"
+                                                value="lasse@lasseedsvik.se" aria-label="default input">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-15 align-middle px-4">
+                                            <label class="form-check-label" for="user-isadmin"><i
+                                                    class="fa-solid fa-crown me-2"></i> Admin:</label>
+                                        </td>
+                                        <td class="w-auto">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="user-isadmin"
+                                                    checked disabled>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-15 align-middle px-4">
+                                            <label class="form-check-label" for="user-isadmin"><i
+                                                    class="fa-solid fa-play me-2"></i> Activated:</label>
+                                        </td>
+                                        <td class="w-auto">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="user-activated"
+                                                    checked disabled>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane border-1" id="social-media">
+						<div class="p-4">
+							<h4>Social media</h4>
+							<table class="table table-borderless table-striped">
+								<tbody>
+									<tr>
+										<td class="w-20 align-middle px-4">
+											<label for="Twitter">
+												<i class="fa-brands fa-twitter me-2"></i>
+												Twitter:</label>
+										</td>
+										<td class="w-auto">
+											<input class="form-control rounded-1" type="text" value="@lasseedsvik"
+												id="Twitter" aria-label="default input">
+										</td>
+									</tr>
+									<tr>
+										<td class="w-20 align-middle px-4">
+											<label for="Facebook">
+												<i class="fa-brands fa-facebook me-2"></i>
+												Facebook:</label>
+										</td>
+										<td class="w-auto">
+											<input class="form-control rounded-1" type="text" value="@lasse.edsvik"
+												id="Facebook" aria-label="default input">
+										</td>
+									</tr>
+									<tr>
+										<td class="w-20 align-middle px-4">
+											<label for="Instagram">
+												<i class="fa-brands fa-square-instagram me-2"></i>
+												Instagram:</label>
+										</td>
+										<td class="w-auto">
+											<input class="form-control rounded-1" type="text" value="@lasseedsvik"
+												id="Instagram" aria-label="default input">
+										</td>
+									</tr>
+									<tr>
+										<td class="w-20 align-middle px-4">
+											<label for="TikTok">
+												<i class="fa-brands fa-tiktok me-2"></i>
+												TikTok:</label>
+										</td>
+										<td class="w-auto">
+											<input class="form-control rounded-1" type="text" value="" id="TikTok"
+												aria-label="default input">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+                    <div class="tab-pane border-1" id="password">
+                        <div class="p-4">
+                            <h4>Set password</h4>
+                            <table class="table table-borderless table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td class="w-20 align-middle px-4">
+                                            <i class="fa-solid fa-user-secret me-2"></i>
+                                            Set password:
+                                        </td>
+                                        <td>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="check-send-password"
+                                                    data-bs-toggle="collapse" data-bs-target="#resetpassword"
+                                                    role="button" aria-expanded="false" aria-controls="resetpassword"
+                                                    aria-pressed="true">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="collapse" id="resetpassword">
+                                <div class="px-4 py-0">
+                                    <table class="table table-borderless table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td class="w-20 align-middle px-4">
+                                                    <label for="Password"><i class="fa-solid fa-key me-2"></i>
+                                                        Password:</label>
+                                                </td>
+                                                <td class="w-auto">
+                                                    <input class="form-control rounded-1" type="text" value=""
+                                                        id="Password" aria-label="default input">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w-20 align-middle px-4">
+                                                    <label for="email-pass">
+                                                        <i class="fa-regular fa-envelope me-2"></i> Email password:
+                                                    </label>
+                                                </td>
+                                                <td class="">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="email-pass"
+                                                            data-bs-toggle="collapse" data-bs-target="#email-password"
+                                                            role="button" aria-expanded="false" aria-pressed="true">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane border-1" id="activity">
+                        <div class="p-4">
+                            <table class="table table-hover table-striped table-responsive overflow-auto">
+                                <thead>
+                                    <tr>
+                                        <th class="w-5"></th>
+                                        <th class="text-center">Activity</th>
+                                        <th class="text-center w-15">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center text-danger"><i class="fa-solid fa-power-off"></i></td>
+                                        <td>Logged off</td>
+                                        <td>2022-11-05 10:11 AM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><i class="fa-solid fa-pen"></i></td>
+                                        <td>Edited page "My first ever template"</td>
+                                        <td>2022-11-05 09:53 AM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center text-success">
+                                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                        </td>
+                                        <td>Logged on</td>
+                                        <td>2022-11-05 07:34 AM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center text-danger"><i class="fa-solid fa-power-off"></i></td>
+                                        <td>Logged off</td>
+                                        <td>2022-11-03 08:14 AM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><i class="fa-solid fa-user"></i></td>
+                                        <td>Edited user "Anna Andersson"</td>
+                                        <td>2022-11-03 08:03 AM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center text-success"><i
+                                                class="fa-solid fa-arrow-right-to-bracket"></i></td>
+                                        <td>Logged on</td>
+                                        <td>2022-11-03 07:34 AM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center text-danger"><i class="fa-solid fa-power-off"></i></td>
+                                        <td>Logged off</td>
+                                        <td>2022-11-01 14:11 AM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><i class="fa-solid fa-folder-open"></i></td>
+                                        <td>Created folder "Folder 1"</td>
+                                        <td>2022-11-01 13:53 AM</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center text-success"><i
+                                                class="fa-solid fa-arrow-right-to-bracket"></i></td>
+                                        <td>Logged on</td>
+                                        <td>2022-11-01 13:44 AM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane border-1" id="save">
+                        <div class="p-4">
+                            <h4>Save user</h4>
+                            <p>
+                                This action will save the user.
+                            </p>
+                            <p class="mt-4">
+                                <button class="btn btn-secondary p-4 py-2 rounded-1" title="Save user">
+                                    <i class="fa-regular fa-floppy-disk me-2"></i> Save User
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- End User edit -->
+
+            <!-- End Content-->
+        </div>
+
+        <footer class="p-4 text-muted border-top text-center">
+            Steel Bootstrap 5 Admin Template. Created 2022 by Lasse Edsvik.
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/lasseedsvik" target="_blank" class="text-muted">github.com/lasseedsvik</a>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
