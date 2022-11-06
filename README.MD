@@ -76,7 +76,7 @@ https://steel.lasseedsvik.se
 
 # Suggestions
 
-- If planning to use move in files. It would look really good if there were a vertical dark blue divider with arrows right and left vertically centered.
+- If planning to use move in files. It would look really good if there were a vertical dark blue divider with arrows right and left that are vertically centered.
 
 <br>
 
