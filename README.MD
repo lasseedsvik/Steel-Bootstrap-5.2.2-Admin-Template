@@ -71,7 +71,7 @@ https://steel.lasseedsvik.se
 
 # Known issues 
 
-- There is some issues in sm and xs-mode. 
+- There are some issues in sm and xs-mode. 
 - "Choose Files" is not a file input. So it needs to be changed and designed if used.
 
 # Suggestions
