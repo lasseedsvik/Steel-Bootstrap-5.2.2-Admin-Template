@@ -69,18 +69,17 @@ https://steel.lasseedsvik.se
 - Trumbowyg https://alex-d.github.io/Trumbowyg/
 - Font Awesome 6.2 https://fontawesome.com
 
-# Known issues 
-
-- There is some issues in sm and xs-mode. 
-- "Choose Files" is not a file input. So it needs to be changed and designed if used.
-
 # Suggestions
 
-- If planning to use move in files. It would look really good if there were a vertical dark blue divider with arrows right and left vertically centered.
+- If planning to use move in files. It would look really good if there were a vertical dark blue divider with arrows right and left that are vertically centered.
 
 <br>
 
 ## The Do What the Fuck You Want to Public License
 
-[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)    
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
+
+
+
+<a href="https://www.buymeacoffee.com/lasseedsvik" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
