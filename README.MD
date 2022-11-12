@@ -70,8 +70,8 @@ https://steel.lasseedsvik.se
 # Frameworks / Plugins / Libraries used 
 
 - Bootstrap 5.2.2 https://getbootstrap.com
-- JQuery 3.6.1 https://jquery.com/
-- Trumbowyg https://alex-d.github.io/Trumbowyg/
+- JQuery 3.6.1 https://jquery.com
+- Trumbowyg https://alex-d.github.io/Trumbowyg
 - Font Awesome 6.2 https://fontawesome.com
 
 # Suggestions
