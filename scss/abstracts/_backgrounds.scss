@@ -1,0 +1,30 @@
+
+@mixin login-bar-bg {
+	background: rgb(13,19,33);
+	background: linear-gradient(62deg, rgba(13,19,33,1) 0%, rgba(116,140,171,1) 100%);
+}
+
+@mixin steel-gradient-bg() {
+	background: rgb(13,19,33);
+	background: linear-gradient(62deg, rgba(13,19,33,1) 0%, rgba(116,140,171,1) 100%);
+}
+
+@mixin hr-blue-bg {
+	background: #1D2D44;
+	background: linear-gradient(36deg, #1D2D44 0%, #a9b7c4 100%);
+}
+
+$body-login-bg: #425985;
+$body-login-lg-bg: linear-gradient(45deg, #75A5B4, #425985, #566e99);
+
+$body-bg: #748CAB;
+$footer-bg: #1D2D44;
+
+$upload-dropzone-hover-bg: #F0EBD833;
+
+$image-modal-body-bg: #354863;
+
+$pblue-bg: #1D2D44;
+$deblue-bg:  #304F6A;
+
+$file-listing-lg-card-header-bg: #00000052;
