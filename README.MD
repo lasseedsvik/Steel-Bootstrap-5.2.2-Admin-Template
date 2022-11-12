@@ -1,5 +1,5 @@
 
-# Steel - Bootstrap 5.2.2 Admin Template 
+# Steel - Bootstrap 5.2.2 Admin Template 2.0
 
 This template was created under the WTFPL licence, which means you can use, modify and distribute the content without permission. 
 
@@ -15,6 +15,11 @@ This has been tested in Bootstrap 5.2.2 but should work in version 5.  There are
 
 https://steel.lasseedsvik.se
 
+# Change log
+
+**Version 2.0**
+
+- Added SCSS support
 
 # Screenshots
 
